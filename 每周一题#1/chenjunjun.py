@@ -76,10 +76,8 @@ def ji_suan(amount, coins):
     results = []
 
     def cb(result):
-        r = 0
-        for x in range(len(result)):
-            r += result[x] * coins[x]
-        if amount == r:
+        current_amount = sum([r*c for r, c in zip(result, coins)])
+        if amount == current_amount:
             results.append(result)
 
     jie(amount, coins, [], cb)
