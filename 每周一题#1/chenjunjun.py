@@ -46,7 +46,7 @@ def jie(amount, coins, result, cb):
     :type coins: list
     :param result: 已经选择的硬币
     :type result: list
-    :param cb: 回调,拥有计算最终结果是否符合要求
+    :param cb: 回调,递归结束之后用于计算计算最终结果是否符合要求
     :return: None
     """
     if not coins:
