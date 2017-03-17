@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 void bubble_sort(int a[], int n);
-int combos(int amount, int arr[], int len, int iter);
+int combos(int amount, int arr[], int len, int num, int iter);
 
 void main()
 {
