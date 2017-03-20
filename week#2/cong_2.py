@@ -30,9 +30,10 @@ for i in range(length):
 print('array:')
 print(array)
 
+array_abs=[0]*length
 for i in range(length):
-    array[i]=(i+array[i])%(length)
-    if(array[i]==i):
+    array_abs[i]=(i+array[i])%(length)
+    if(array_abs[i]==i):
         aside[i]=i
 
 the_array=[0]*length
@@ -41,7 +42,7 @@ for i in range(length):
     the_array[i]=i
 
 print("array_abs:")
-print(array)
+print(array_abs)
 print("aside:")
 print(aside)
 
@@ -49,17 +50,28 @@ for j in range(length):
     B=False
     for i in range(length):
         if(i!=aside[i]):
-            the_array[i]=array[the_array[i]]
+            the_array[i]=array_abs[the_array[i]]
             if(the_array[i]==i):
-                print("yes")
-                print(i)
-                print(array[i])
-                x=array[i]
-                for k in range(j):
-                    print(array[x])
-                    x=array[x]
-                B=True
-                break
+                sym=array[i]//abs(array[i])
+                sym_right=True
+                y=array_abs[i]
+                for l in range(j):
+                    if(sym!=array[y]//abs(array[y])):
+                        sym_right=False
+                        break
+                    y=array_abs[y]
+                    
+                if(sym_right):
+                    print("yes")
+                    print(i)
+                    print(array_abs[i])
+                    x=array_abs[i]
+                    for k in range(j):
+                        print(array_abs[x])
+                        x=array_abs[x]
+                    B=True
+                    break
+
     if(B):
         break
     elif(j==length-1):
