@@ -36,7 +36,7 @@ int main()
 	enummap.insert(map<int, char>::value_type(25,'Y'));
 	enummap.insert(map<int, char>::value_type(26,'Z'));
 
-	string s = "120";
+	string s = "91741914201320110";
 	cout<<"code = "<<s<<endl;
 	cout<<"way of decode = "<<cal_decode(s)<<endl;
 
@@ -52,7 +52,7 @@ int cal_decode(string &s)
 	num[0] = 1;                         //1 ... 9
 	if ((s[0] > '2' && s[1] != '0') || (s[0] < '3' && s[1] == '0'))      //27 37 10 20...
 		num[1] = 1;
-	else if((s[0] == '1' || (s[1] == '2' && s[1] <= '6')) && s[1] != 0)      //11 ... 26
+	else if((s[0] == '1' || (s[0] == '2' && s[1] <= '6')) && s[1] != '0')      //11 ... 26
 		num[1] = 2;
 	else                                //40 50...
 		num[1] = 0;
@@ -78,5 +78,8 @@ int cal_decode(string &s)
 				num[i] = num[i-1];
 		}
 	}
+	for (int i = 0; i < s.length(); i++)
+		cout<<num[i]<<" ";
+	cout<<"\n";
 	return num[s.length()-1];
 }
