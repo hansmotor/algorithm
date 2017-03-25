@@ -137,6 +137,40 @@ class SolutionCong(object):
             
 
 
+class SolutionCong2(object):
+    def numDecodings(self, array):
+        
+        array=map(int, array)
+        
+        if(len(array)<1):
+            return 0
+        if(array[0]<1):
+            return 0
+
+        ls=[1]+[0]*len(array)
+            
+        for i in range(len(array)):
+            
+            ser=-1*i-1
+            
+            if(array[ser]<0):
+                return 0
+            
+            if(i==0):
+                if(array[-1]>0):
+                    ls[i+1]=1
+                else:
+                    ls[i+1]=0
+            else:
+                if(array[ser]<1):
+                    ls[i+1]=0
+                elif(array[ser]*10+array[ser+1]<27):
+                    ls[i+1]=ls[i]+ls[i-1]
+                else:
+                    ls[i+1]=ls[i]
+
+        return ls[-1]
+
 
 
 
@@ -251,6 +285,7 @@ def test(S):
     s = S()
     f = lambda x: s.numDecodings(x)
     bundle(f)
+    print "test \033[1m%s\033[0m passed"%S.__name__
     #gen_test(f)
 
 
@@ -258,3 +293,4 @@ if __name__ == "__main__":
     test(SolutionHoriSun)
     test(SolutionXLZ)
     #test(SolutionCong) # not pass
+    test(SolutionCong2) 
