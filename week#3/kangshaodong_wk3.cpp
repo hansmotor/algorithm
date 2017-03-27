@@ -62,7 +62,7 @@ void decode(int in_idx, int charcnt)
 			{
 				int tempcnt = charcnt;
 				while(tempcnt-- > 0)
-					printf(" ");
+					printf("-");
 				printf("%c",letters[abc_idx-1]);
 				charcnt += 1;
 				in_idx += 2;
