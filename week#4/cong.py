@@ -23,10 +23,14 @@ class Solution(object):
     def findDisappearedNumbers(self, nums):
         for i in range(len(nums)):
             
-            if(nums[i]>0):
-                nums[nums[i]-1]-=len(nums)
-            else:
-                nums[nums[i]+len(nums)-1]-=len(nums)
+            nums[(nums[i]%len(nums))-1]-=len(nums)
+            
+#==============================================================================
+#             if(nums[i]>0):
+#                 nums[nums[i]-1]-=len(nums)
+#             else:
+#                 nums[nums[i]+len(nums)-1]-=len(nums)
+#==============================================================================
 
 #==============================================================================
 #             a=nums[i]
