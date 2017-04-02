@@ -9,7 +9,7 @@
 #include <string>
 using namespace std;
 
-//week3-------------------
+//week4-------------------
 class NumberInclusiveFind 
 {
 public:
