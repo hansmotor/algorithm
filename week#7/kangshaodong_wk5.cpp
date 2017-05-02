@@ -5,11 +5,9 @@
 #include <stdlib.h>
 
 void pseudo_bubble_sort(int a[], int n, int split);
-//int combos(int amount, int arr[], int len, int num, int iter);
 
 void main()
 {
-	//int amount, denom, arr[500], i=0, len, num=0, iter=0;
 	int item, arr[500], i=0, len, splitnum;
 	char c;
 
@@ -36,13 +34,11 @@ void main()
 		printf("%d ", arr[i]);
 	}
 	printf("]\n");
-	//num = combos(amount,arr,len, num, iter);
-	//printf("Output: %d combinations in total.",num);
 
 	system("pause");
 }
 
-//bubble_sort
+//pseudo_bubble_sort
 void pseudo_bubble_sort(int a[], int n, int split)
 {
 	int i, j, temp;
@@ -57,49 +53,3 @@ void pseudo_bubble_sort(int a[], int n, int split)
 			}
 		}
 }
-
-//print out combinations
-/*int combos(int amount, int arr[], int len, int num, int iter)
-{
-	int i, j;
-	int amount_less;
-	iter++;
-	for (i = 0; i <= amount/arr[len-1]; i++)
-	{
-		if(len>1)
-		{
-			if((i>0)&&(iter!=1))
-			{
-				for(j=1; j<=iter-1; j++)
-				{
-					printf("      ");
-				}
-			}
-		}
-
-		if(amount - i*arr[len-1] == 0)
-		{
-			printf("%dX%d\n",i,arr[len-1]);
-			num++;
-		}
-		else
-		{
-			if(len>1)
-			{
-				printf("%dX%d + ",i,arr[len-1]);
-				amount_less = amount - i * arr[len-1];
-				num = combos(amount_less, arr, len-1, num, iter);
-			}
-		}
-	}
-	return num;
-}*/
-
-
-
-
-
-
-
-
-
