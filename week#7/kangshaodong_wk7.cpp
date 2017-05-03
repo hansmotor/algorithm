@@ -1,4 +1,4 @@
-// week5: Find all unique triplets in the array which gives the sum of zero.
+// week7: list partition
 // kangshaodong
 
 #include <stdio.h>
