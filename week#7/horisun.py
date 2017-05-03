@@ -24,15 +24,14 @@ class Solution(object):
             if(p.val<x):
                 a.next = p
                 a = p
-                t = p.next
-                p.next = None
-                p = t
+                p = a.next
+                a.next = None
             else:
                 b.next = p
                 b = p
-                t = p.next
-                p.next = None
-                p = t
+                p = b.next
+                b.next = None
+
 
         a.next = b_.next
         return a_.next
